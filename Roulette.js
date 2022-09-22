@@ -12,23 +12,32 @@ function changeBackground() {
 changeBackground();
 changeBg.onchange = changeBackground;
 
-function rotateBackground() {
-  //   const rouletteSize = changeBg.selectedIndex + 2;
-  //   const arc = 360 / rouletteSize;
-
+function rotateDefault(plus) {
   //   const ran = Math.floor(Math.random() * rouletteSize);
   //   const rotate = ran * arc + 3240 + arc * 3;
 
-  //   document.getElementById("bgImg").style.transform = "rotate(90deg)";
-
   let rotateImage = document.getElementById("bgImg");
   rotateImage.style.transition = "transform 1s";
-  //   let rotate = (rotateImage.style.transform = "rotate(180deg)");
-  let rotate = (rotateImage.style.transform = "rotate(8turn)");
-  rotate();
+  rotateImage.style.transform = "rotate(8turn)";
 }
 
-document.getElementById("roulette-button").onclick = rotateBackground;
+function rotateDiverse() {
+  let rouletteSize = changeBg.selectedIndex + 2;
+  let arc = 360 / rouletteSize;
+  rotateDefault();
+  let image = document.getElementById("bgImg");
+  image.style.transform = "rotate(90deg)";
+}
+
+function final() {
+  //   rotateDefault();
+  rotateDiverse();
+  //   alert("test");
+}
+
+// document.getElementById("roulette-button").onclick = rotateDefault;
+document.getElementById("roulette-button").onclick = final;
+// document.getElementById("roulette-button").onclick = rotateDiverse;
 
 // function rotateImg() {
 //   document.getElementById("bgImg").getElementsByClassName.transform =

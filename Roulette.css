@@ -4,3 +4,15 @@
 .roulette-box {
   padding-top: 20px;
 }
+.roulette-bg {
+  width: 300px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+.roulette-bg img {
+  width: 100%;
+}
+#roulette-button {
+  width: 150px;
+  font-size: 20px;
+}
