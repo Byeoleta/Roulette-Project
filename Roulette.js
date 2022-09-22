@@ -23,7 +23,7 @@ function rotateDefault(plus) {
 
 function rotateDiverse() {
   let rouletteSize = changeBg.selectedIndex + 2;
-  let arc = 360 / rouletteSize;
+  let plus = 360 / rouletteSize;
   rotateDefault();
   let image = document.getElementById("bgImg");
   image.style.transform = "rotate(90deg)";
