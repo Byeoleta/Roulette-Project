@@ -13,9 +13,20 @@ changeBackground();
 changeBg.onchange = changeBackground;
 
 function rotateBackground() {
-  let rouletteSize = changeBg.selectedIndex + 2;
-  console.log(rouletteSize);
+  //   const rouletteSize = changeBg.selectedIndex + 2;
+  //   const arc = 360 / rouletteSize;
+
+  //   const ran = Math.floor(Math.random() * rouletteSize);
+  //   const rotate = ran * arc + 3240 + arc * 3;
+
+  //   document.getElementById("bgImg").style.transform = "rotate(90deg)";
+
+  let rotateImage = document.getElementById("bgImg");
+  rotateImage.style.transition = "transform 1s";
+  rotateImage.style.transform = "rotate(180deg)";
 }
+
+document.getElementById("roulette-button").onclick = rotateBackground;
 
 // function rotateImg() {
 //   document.getElementById("bgImg").getElementsByClassName.transform =
