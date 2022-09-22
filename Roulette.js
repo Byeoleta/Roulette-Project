@@ -23,7 +23,9 @@ function rotateBackground() {
 
   let rotateImage = document.getElementById("bgImg");
   rotateImage.style.transition = "transform 1s";
-  rotateImage.style.transform = "rotate(180deg)";
+  //   let rotate = (rotateImage.style.transform = "rotate(180deg)");
+  let rotate = (rotateImage.style.transform = "rotate(8turn)");
+  rotate();
 }
 
 document.getElementById("roulette-button").onclick = rotateBackground;
