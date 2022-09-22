@@ -18,7 +18,8 @@ function rotateDefault(plus) {
 
   let rotateImage = document.getElementById("bgImg");
   rotateImage.style.transition = "transform 1s";
-  rotateImage.style.transform = "rotate(8turn)";
+  let rotate = (rotateImage.style.transform = "rotate(8turn)");
+  rotate();
 }
 
 function rotateDiverse() {
@@ -26,11 +27,10 @@ function rotateDiverse() {
   let arc = 360 / rouletteSize;
   rotateDefault();
 
-  setTimeout(function () {
-    //360*8 != 0 각도상의로는 0
-    let image = document.getElementById("bgImg");
-    image.style.transform = "rotate(90deg)";
-  }, 1000);
+  let image = document.getElementById("bgImg");
+  let plus = (image.style.transform = "rotate((90deg)");
+
+  plus();
 }
 
 function final() {
