@@ -9,20 +9,22 @@ function changeBackground() {
 changeBackground();
 changeBg.onchange = changeBackground;
 
-function rotateDefault() {
+function rotateRoulette() {
   let rotateImage = document.getElementById("bgImg");
-  rotateImage.style.transition = "transform 1s";
-
   let rouletteSize = changeBg.selectedIndex + 2;
   let arc = 360 / rouletteSize;
   let defaultNum = 360 * 8;
   let totalNum = defaultNum + arc;
   rotateImage.style.transform = "rotate(" + totalNum + "deg)";
+  rotateImage.style.transition = "transform 1s";
 }
 
 function final() {
-  rotateDefault();
+  rotateRoulette();
   //   alert("test");
+  setTimeout(() => {
+    alert("축하"), 1000;
+  }, 1500);
 }
 
 document.getElementById("roulette-button").onclick = final;
