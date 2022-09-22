@@ -10,16 +10,26 @@
   <body>
     <div class="roulette-container">
       <h1>💞돌려돌려 돌림판💞</h1>
-      <form class="roulette-options"></form>
+      <form class="roulette-options">
+        <h3>룰렛 칸수 선택</h3>
+        <select name="칸 수" id="changeBg">
+          <option value="/assets/bg_circle2.png">2칸</option>
+          <option value="/assets/bg_circle3.png">3칸</option>
+          <option value="/assets/bg_circle4.png">4칸</option>
+          <option value="/assets/bg_circle5.png">5칸</option>
+          <option value="/assets/bg_circle6.png">6칸</option>
+        </select>
+      </form>
       <div class="roulette-box">
         <div class="roulette-pointer">
           <img src="/assets/arrow.png" alt="roulette-pointer" />
         </div>
         <div class="roulette-bg">
-          <img src="/assets/bg_circle2.png" alt="roulette-bg" />
+          <img src="/assets/bg_circle2.png" alt="roulette-bg" id="bgImg" />
         </div>
       </div>
       <button>🤡START🤡</button>
     </div>
+    <script src="/Roulette.js"></script>
   </body>
 </html>
