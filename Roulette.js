@@ -23,10 +23,14 @@ function rotateDefault(plus) {
 
 function rotateDiverse() {
   let rouletteSize = changeBg.selectedIndex + 2;
-  let plus = 360 / rouletteSize;
+  let arc = 360 / rouletteSize;
   rotateDefault();
-  let image = document.getElementById("bgImg");
-  image.style.transform = "rotate(90deg)";
+
+  setTimeout(function () {
+    //360*8 != 0 각도상의로는 0
+    let image = document.getElementById("bgImg");
+    image.style.transform = "rotate(90deg)";
+  }, 1000);
 }
 
 function final() {
