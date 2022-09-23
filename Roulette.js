@@ -24,22 +24,31 @@ function rotateRoulette() {
   let index = changeBg.selectedIndex;
   let orderDefault = index + 2;
 
+  // 0 ~ 90 사이 난수 만들기 테스트용
+  let ff = Math.floor(Math.random() * 90);
+  // 마이너스 0 ~ 90 사이 난수 만들기
+  let ff2 = Math.floor(Math.random() * -90);
+
+  let randomPlace = Math.floor(Math.random() * (arc / 2));
+
   /** 1번째 칸 당첨 */
-  let Num1 = defaultNum + arc * orderDefault;
+  let Num1 = defaultNum + arc * orderDefault + randomPlace;
   /** 2번째 칸 당첨 */
-  let Num2 = defaultNum + arc * (orderDefault - 1);
+  let Num2 = defaultNum + arc * (orderDefault - 1) + randomPlace;
   /** 3번째 칸 당첨 */
-  let Num3 = defaultNum + arc * (orderDefault - 2);
+  let Num3 = defaultNum + arc * (orderDefault - 2) + randomPlace;
   /** 4번째 칸 당첨 */
-  let Num4 = defaultNum + arc * (orderDefault - 3);
+  let Num4 = defaultNum + arc * (orderDefault - 3) + randomPlace;
   /** 5번째 칸 당첨 */
-  let Num5 = defaultNum + arc * (orderDefault - 4);
+  let Num5 = defaultNum + arc * (orderDefault - 4) + randomPlace;
   /** 6번째 칸 당첨 */
-  let Num6 = defaultNum + arc * (orderDefault - 5);
+  let Num6 = defaultNum + arc * (orderDefault - 5) + randomPlace;
 
   let testNum = defaultNum + arc * orderDefault + arc / 2;
+  // let ff = Math.floor(Math.random() * 91);
+  console.log(ff);
 
-  rotateImage.style.transform = "rotate(" + testNum + "deg)";
+  rotateImage.style.transform = "rotate(" + Num2 + "deg)";
   rotateImage.style.transition = "transform 1s";
 }
 
@@ -48,6 +57,7 @@ function final() {
   rotateRoulette();
   let nu = changeBg.selectedIndex + 2;
   setTimeout(() => {
+    // 이런 식으로 값 nu에 넣어주기
     alert(`두근두근 ${nu} 에 당첨되었습니다.`), 1000;
   }, 1500);
 }
