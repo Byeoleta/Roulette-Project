@@ -14,7 +14,9 @@ function rotateRoulette() {
   let rouletteSize = changeBg.selectedIndex + 2;
   let arc = 360 / rouletteSize;
   let defaultNum = 360 * 8;
-  let totalNum = defaultNum + arc;
+  let ran = Math.floor(Math.random() * rouletteSize);
+  let totalNum = arc * ran + defaultNum;
+
   rotateImage.style.transform = "rotate(" + totalNum + "deg)";
   rotateImage.style.transition = "transform 1s";
 }
