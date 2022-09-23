@@ -17,11 +17,9 @@ function rotateRoulette() {
   let rouletteSize = changeBg.selectedIndex + 2;
   let arc = 360 / rouletteSize;
   /** 기본으로 돌아가는 바퀴수 */
-  let defaultNum = 360 * 8;
+  let defaultNum = 360 * 9;
   /** 랜덤한 위치에서 멈추는 함수 */
   let totalNum = Math.random() * defaultNum + defaultNum;
-  /** 마지막 룰렛에서 멈추는 함수 */
-  let lastNum = arc + defaultNum;
 
   let index = changeBg.selectedIndex;
   let orderDefault = index + 2;
@@ -39,18 +37,18 @@ function rotateRoulette() {
   /** 6번째 칸 당첨 */
   let Num6 = defaultNum + arc * (orderDefault - 5);
 
-  // rotateImage.style.transform = "rotate(" + lastNum + "deg)";
-  rotateImage.style.transform = "rotate(" + Num3 + "deg)";
-  // rotateImage.style.transform = "rotate(2900deg)";
+  let testNum = defaultNum + arc * orderDefault + arc / 2;
+
+  rotateImage.style.transform = "rotate(" + testNum + "deg)";
   rotateImage.style.transition = "transform 1s";
 }
 
 /** 룰렛 실행하는 함수 */
 function final() {
   rotateRoulette();
-  //   alert("test");
+  let nu = changeBg.selectedIndex + 2;
   setTimeout(() => {
-    alert("💜당첨되셨습니다💜"), 1000;
+    alert(`두근두근 ${nu} 에 당첨되었습니다.`), 1000;
   }, 1500);
 }
 
