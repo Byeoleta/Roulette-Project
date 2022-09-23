@@ -17,8 +17,10 @@ function rotateRoulette() {
   let arc = 360 / rouletteSize;
   /** 기본으로 돌아가는 바퀴수 */
   let defaultNum = 360 * 8;
-  let ran = Math.floor(Math.random() * rouletteSize);
+  /** 랜덤한 위치에서 멈추는 함수 */
   let totalNum = Math.random() * defaultNum + defaultNum;
+  /** 지정된 위치에서 멈추는 함수 */
+  let lastNum = arc + defaultNum;
 
   rotateImage.style.transform = "rotate(" + totalNum + "deg)";
   rotateImage.style.transition = "transform 1s";
