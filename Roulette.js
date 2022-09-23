@@ -4,6 +4,7 @@ let bgImg = document.getElementById("bgImg");
 function changeBackground() {
   let index = changeBg.selectedIndex;
   bgImg.src = changeBg.options[index].value;
+  console.log(changeBg.selectedIndex);
 }
 
 changeBackground();
@@ -19,10 +20,28 @@ function rotateRoulette() {
   let defaultNum = 360 * 8;
   /** 랜덤한 위치에서 멈추는 함수 */
   let totalNum = Math.random() * defaultNum + defaultNum;
-  /** 지정된 위치에서 멈추는 함수 */
+  /** 마지막 룰렛에서 멈추는 함수 */
   let lastNum = arc + defaultNum;
 
-  rotateImage.style.transform = "rotate(" + totalNum + "deg)";
+  let index = changeBg.selectedIndex;
+  let orderDefault = index + 2;
+
+  /** 1번째 칸 당첨 */
+  let Num1 = defaultNum + arc * orderDefault;
+  /** 2번째 칸 당첨 */
+  let Num2 = defaultNum + arc * (orderDefault - 1);
+  /** 3번째 칸 당첨 */
+  let Num3 = defaultNum + arc * (orderDefault - 2);
+  /** 4번째 칸 당첨 */
+  let Num4 = defaultNum + arc * (orderDefault - 3);
+  /** 5번째 칸 당첨 */
+  let Num5 = defaultNum + arc * (orderDefault - 4);
+  /** 6번째 칸 당첨 */
+  let Num6 = defaultNum + arc * (orderDefault - 5);
+
+  // rotateImage.style.transform = "rotate(" + lastNum + "deg)";
+  rotateImage.style.transform = "rotate(" + Num3 + "deg)";
+  // rotateImage.style.transform = "rotate(2900deg)";
   rotateImage.style.transition = "transform 1s";
 }
 
@@ -31,7 +50,7 @@ function final() {
   rotateRoulette();
   //   alert("test");
   setTimeout(() => {
-    alert("축하"), 1000;
+    alert("💜당첨되셨습니다💜"), 1000;
   }, 1500);
 }
 
