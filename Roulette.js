@@ -4,7 +4,6 @@ let bgImg = document.getElementById("bgImg");
 function changeBackground() {
   let index = changeBg.selectedIndex;
   bgImg.src = changeBg.options[index].value;
-  console.log(changeBg.selectedIndex);
 }
 
 changeBackground();
@@ -31,6 +30,8 @@ function rotateRoulette() {
 
   let randomPlace = Math.floor(Math.random() * (arc / 2));
 
+  console.log(random2());
+
   /** 1번째 칸 당첨 */
   let Num1 = defaultNum + arc * orderDefault + randomPlace;
   /** 2번째 칸 당첨 */
@@ -44,11 +45,11 @@ function rotateRoulette() {
   /** 6번째 칸 당첨 */
   let Num6 = defaultNum + arc * (orderDefault - 5) + randomPlace;
 
-  let testNum = defaultNum + arc * orderDefault + arc / 2;
-  // let ff = Math.floor(Math.random() * 91);
-  console.log(ff);
+  // let testNum = defaultNum + arc * orderDefault + arc / 2;
+  // // let ff = Math.floor(Math.random() * 91);
+  // console.log(ff);
 
-  rotateImage.style.transform = "rotate(" + Num2 + "deg)";
+  rotateImage.style.transform = "rotate(" + Num1 + "deg)";
   rotateImage.style.transition = "transform 1s";
 }
 
