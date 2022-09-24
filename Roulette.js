@@ -28,9 +28,10 @@ function rotateRoulette() {
   // 마이너스 0 ~ 90 사이 난수 만들기
   let ff2 = Math.floor(Math.random() * -90);
 
+  /** 룰렛 칸  가운데 기준 반으로 나눈 뒤  랜덤 위 */
   let randomPlace = Math.floor(Math.random() * (arc / 2));
 
-  console.log(random2());
+  // console.log(random2());
 
   /** 1번째 칸 당첨 */
   let Num1 = defaultNum + arc * orderDefault + randomPlace;
