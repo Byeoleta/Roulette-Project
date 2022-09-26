@@ -34,6 +34,7 @@ function rotateRoulette() {
   /** 1번째 칸 당첨 */
   let Num1 = defaultRotation + arc * orderDefault + randomPlace;
   let Num11 = defaultRotation + arc * orderDefault - randomPlace;
+
   /** 2번째 칸 당첨 */
   let Num2 = defaultRotation + arc * (orderDefault - 1) + randomPlace;
   /** 3번째 칸 당첨 */
@@ -45,19 +46,35 @@ function rotateRoulette() {
   /** 6번째 칸 당첨 */
   let Num6 = defaultRotation + arc * (orderDefault - 5) + randomPlace;
 
+  let i = 1;
+  let result = 0;
+  while (i < rouletteSize + 1) {
+    result -= i;
+    i += 2;
+  }
+  console.log(result);
+
   /** 50% 반반 확률 만들기 */
-  function half() {
-    if (Math.random() < 0.5) {
-      defaultRotation + arc * (orderDefault - 1) + randomPlace;
-      console.log("test");
-    } else {
-      defaultRotation + arc * (orderDefault - 1) - randomPlace;
-      console.log("test!!");
-    }
+  // function half() {
+  //   if (Math.random() < 0.5) {
+  //     defaultRotation + arc * (orderDefault - 1) + randomPlace;
+  //     console.log("test");
+  //   } else {
+  //     defaultRotation + arc * (orderDefault - 1) - randomPlace;
+  //     console.log("test!!");
+  //   }
+  // }
+
+  if (Math.random() < 0.5) {
+    rotateImage.style.transform = "rotate(" + Num11 + "deg)";
+  } else {
+    rotateImage.style.transform = "rotate(" + Num1 + "deg)";
   }
 
-  // rotateImage.style.transform = "rotate(" + Num1 + "deg)";
-  rotateImage.style.transform = "rotate(" + half + "deg)";
+  // rotateImage.style.transform = "rotate(" + Num11 + "deg)";
+
+  // rotateImage.style.transform = `rotate(${half}deg)`;
+  // rotateImage.style.transform = "rotate(`${half}deg`)";
   rotateImage.style.transition = "transform 1s";
 }
 
