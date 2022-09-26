@@ -60,9 +60,10 @@ function clickRoulette() {
   rouletteBtn.innerText = "🌝STOP🌝";
 
   let testData = changeBg.selectedIndex + 2;
+  let winNum = 1;
   setTimeout(() => {
     // 이런 식으로 값 구해서 아래에 넣어주기
-    alert(`두근두근 ${testData}칸 중  ${testData}에 당첨되었습니다.`), 1000;
+    alert(`두근두근 ${testData}칸 중  ${winNum}에 당첨되었습니다.`), 1000;
   }, 1500);
 }
 
