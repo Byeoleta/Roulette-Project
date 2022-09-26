@@ -31,8 +31,6 @@ function rotateRoulette() {
   /** 룰렛 칸  가운데 기준 반으로 나눈 뒤  랜덤 위치(+ 하면 왼쪽 랜덤, - 하면 오른쪽 랜덤   ) */
   let randomPlace = Math.floor(Math.random() * (arc / 2));
 
-  // console.log(random2());
-
   /** 1번째 칸 당첨 */
   let Num1 = defaultRotation + arc * orderDefault + randomPlace;
   /** 2번째 칸 당첨 */
@@ -55,17 +53,17 @@ function rotateRoulette() {
 }
 
 /** 룰렛 실행하는 함수 */
-function final() {
+function clickRoulette() {
   rotateRoulette();
 
   const rouletteBtn = document.getElementById("roulette-button");
   rouletteBtn.innerText = "🌝STOP🌝";
 
-  let nu = changeBg.selectedIndex + 2;
+  let testData = changeBg.selectedIndex + 2;
   setTimeout(() => {
-    // 이런 식으로 값 nu에 넣어주기
-    alert(`두근두근 ${nu} 에 당첨되었습니다.`), 1000;
+    // 이런 식으로 값 구해서 아래에 넣어주기
+    alert(`두근두근 ${testData}칸 중  ${testData}에 당첨되었습니다.`), 1000;
   }, 1500);
 }
 
-document.getElementById("roulette-button").onclick = final;
+document.getElementById("roulette-button").onclick = clickRoulette;
