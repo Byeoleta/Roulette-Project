@@ -65,6 +65,9 @@ function clickRoulette() {
     // 이런 식으로 값 구해서 아래에 넣어주기
     alert(`두근두근 ${testData}칸 중  ${winNum}에 당첨되었습니다.`), 1000;
   }, 1500);
+  setTimeout(() => {
+    location.reload(), 2000;
+  }, 2000);
 }
 
 document.getElementById("roulette-button").onclick = clickRoulette;
