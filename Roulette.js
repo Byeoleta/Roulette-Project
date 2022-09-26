@@ -21,7 +21,7 @@ function rotateRoulette() {
   /** 룰렛 칸  가운데 기준 반으로 나눈 뒤  랜덤 위치(+ 하면 왼쪽 랜덤, - 하면 오른쪽 랜덤   ) */
   let randomPlace = Math.floor(Math.random() * (arc / 2));
 
-  /** 서버에서 보내줄 당첨 설정값 */
+  /** 🔥서버에서 보내줄 당첨 설정값🔥 */
   winningNum = 6;
 
   /** 설정값 기준 중심의 왼쪽 위치 중 랜덤 */
@@ -47,14 +47,18 @@ function rotateRoulette() {
 function clickRoulette() {
   rotateRoulette();
 
+  /** 동작시 버튼 내 텍스트 변경(start=>stop)되는 함수 */
   const rouletteBtn = document.getElementById("roulette-button");
   rouletteBtn.innerText = "🌝STOP🌝";
 
-  let testData = changeBg.selectedIndex + 2;
-  let winNum = 1;
+  let rouletteData = changeBg.selectedIndex + 2;
+  let pickData = winningNum;
   setTimeout(() => {
-    // 이런 식으로 값 구해서 아래에 넣어주기
-    alert(`두근두근 ${testData}칸 중  ${winNum}에 당첨되었습니다.`), 1000;
+    alert(
+      `축하합니다 :)
+${rouletteData}칸 중 ${pickData} 번째 칸에 당첨되었습니다.`
+    ),
+      1000;
   }, 1500);
   // 새로고침할 필요 없게 하려고 넣어놓음
   setTimeout(() => {
