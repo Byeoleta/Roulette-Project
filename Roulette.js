@@ -16,9 +16,9 @@ function rotateRoulette() {
   let rouletteSize = changeBg.selectedIndex + 2;
   let arc = 360 / rouletteSize;
   /** 기본으로 돌아가는 바퀴수 */
-  let defaultNum = 360 * 9;
+  let defaultRotation = 360 * 9;
   /** 랜덤한 위치에서 멈추는 함수 */
-  let totalNum = Math.random() * defaultNum + defaultNum;
+  let randomRotate = Math.random() * defaultRotation + defaultRotation;
 
   let index = changeBg.selectedIndex;
   let orderDefault = index + 2;
@@ -28,23 +28,23 @@ function rotateRoulette() {
   // 마이너스 0 ~ 90 사이 난수 만들기
   let ff2 = Math.floor(Math.random() * -90);
 
-  /** 룰렛 칸  가운데 기준 반으로 나눈 뒤  랜덤 위 */
+  /** 룰렛 칸  가운데 기준 반으로 나눈 뒤  랜덤 위치(+ 하면 왼쪽 랜덤, - 하면 오른쪽 랜덤   ) */
   let randomPlace = Math.floor(Math.random() * (arc / 2));
 
   // console.log(random2());
 
   /** 1번째 칸 당첨 */
-  let Num1 = defaultNum + arc * orderDefault + randomPlace;
+  let Num1 = defaultRotation + arc * orderDefault + randomPlace;
   /** 2번째 칸 당첨 */
-  let Num2 = defaultNum + arc * (orderDefault - 1) + randomPlace;
+  let Num2 = defaultRotation + arc * (orderDefault - 1) + randomPlace;
   /** 3번째 칸 당첨 */
-  let Num3 = defaultNum + arc * (orderDefault - 2) + randomPlace;
+  let Num3 = defaultRotation + arc * (orderDefault - 2) + randomPlace;
   /** 4번째 칸 당첨 */
-  let Num4 = defaultNum + arc * (orderDefault - 3) + randomPlace;
+  let Num4 = defaultRotation + arc * (orderDefault - 3) + randomPlace;
   /** 5번째 칸 당첨 */
-  let Num5 = defaultNum + arc * (orderDefault - 4) + randomPlace;
+  let Num5 = defaultRotation + arc * (orderDefault - 4) + randomPlace;
   /** 6번째 칸 당첨 */
-  let Num6 = defaultNum + arc * (orderDefault - 5) + randomPlace;
+  let Num6 = defaultRotation + arc * (orderDefault - 5) + randomPlace;
 
   // let testNum = defaultNum + arc * orderDefault + arc / 2;
   // // let ff = Math.floor(Math.random() * 91);
