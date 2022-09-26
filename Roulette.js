@@ -33,6 +33,7 @@ function rotateRoulette() {
 
   /** 1번째 칸 당첨 */
   let Num1 = defaultRotation + arc * orderDefault + randomPlace;
+  let Num11 = defaultRotation + arc * orderDefault - randomPlace;
   /** 2번째 칸 당첨 */
   let Num2 = defaultRotation + arc * (orderDefault - 1) + randomPlace;
   /** 3번째 칸 당첨 */
@@ -44,11 +45,19 @@ function rotateRoulette() {
   /** 6번째 칸 당첨 */
   let Num6 = defaultRotation + arc * (orderDefault - 5) + randomPlace;
 
-  // let testNum = defaultNum + arc * orderDefault + arc / 2;
-  // // let ff = Math.floor(Math.random() * 91);
-  // console.log(ff);
+  /** 50% 반반 확률 만들기 */
+  function half() {
+    if (Math.random() < 0.5) {
+      defaultRotation + arc * (orderDefault - 1) + randomPlace;
+      console.log("test");
+    } else {
+      defaultRotation + arc * (orderDefault - 1) - randomPlace;
+      console.log("test!!");
+    }
+  }
 
-  rotateImage.style.transform = "rotate(" + Num1 + "deg)";
+  // rotateImage.style.transform = "rotate(" + Num1 + "deg)";
+  rotateImage.style.transform = "rotate(" + half + "deg)";
   rotateImage.style.transition = "transform 1s";
 }
 
@@ -65,6 +74,7 @@ function clickRoulette() {
     // 이런 식으로 값 구해서 아래에 넣어주기
     alert(`두근두근 ${testData}칸 중  ${winNum}에 당첨되었습니다.`), 1000;
   }, 1500);
+  // 새로고침할 필요 없게 하려고 넣어놓음
   setTimeout(() => {
     location.reload(), 2000;
   }, 2000);
