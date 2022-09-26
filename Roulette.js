@@ -18,7 +18,7 @@ function rotateRoulette() {
   /** 기본으로 돌아가는 바퀴수 */
   let defaultRotation = 360 * 9;
   /** 랜덤한 위치에서 멈추는 함수 */
-  let randomRotate = Math.random() * defaultRotation + defaultRotation;
+  // let randomRotate = Math.random() * defaultRotation + defaultRotation;
 
   let index = changeBg.selectedIndex;
   let orderDefault = index + 2;
@@ -34,7 +34,6 @@ function rotateRoulette() {
   /** 1번째 칸 당첨 */
   let Num1 = defaultRotation + arc * orderDefault + randomPlace;
   let Num11 = defaultRotation + arc * orderDefault - randomPlace;
-
   /** 2번째 칸 당첨 */
   let Num2 = defaultRotation + arc * (orderDefault - 1) + randomPlace;
   /** 3번째 칸 당첨 */
@@ -46,13 +45,50 @@ function rotateRoulette() {
   /** 6번째 칸 당첨 */
   let Num6 = defaultRotation + arc * (orderDefault - 5) + randomPlace;
 
-  let i = 1;
-  let result = 0;
-  while (i < rouletteSize + 1) {
-    result -= i;
-    i += 2;
+  /** 서버에서 보내줄 당첨 설정값 */
+  winningNum = 2;
+
+  /** 설정값 기준 중심의 왼쪽 위치 중 랜덤 */
+  let leftRandom =
+    defaultRotation + arc * (orderDefault - (winningNum - 1)) + randomPlace;
+  /** 설정값 기준 중심의 오른쪽 위치 중 랜덤 */
+  let rightRandom =
+    defaultRotation + arc * (orderDefault - (winningNum - 1)) - randomPlace;
+
+  // function dada() {
+  //   for (let i = 1; i < 12; i += 2) {
+  //     defaultRotation + arc * (orderDefault - i) + randomPlace;
+  //     console.log(i);
+  //   }
+  // }
+  // dada();
+
+  // function dadada() {
+  //   for (let i = 1; i < 12; i += 2) {
+  //     defaultRotation + arc * (orderDefault - i) - randomPlace;
+  //     console.log(i);
+  //   }
+  // }
+
+  function rototo() {
+    if (Math.random() < 0.5) {
+      // rotateImage.style.transform = "rotate(" + Num11 + "deg)";
+      rotateImage.style.transform = "rotate(" + leftRandom + "deg)";
+      // rotateImage.style.transform = `rotate(${dada}deg)`;
+      // rotateImage.style.transform = "rotate(`${dada}`)";
+    } else {
+      // rotateImage.style.transform = "rotate(" + Num1 + "deg)";
+      rotateImage.style.transform = "rotate(" + rightRandom + "deg)";
+      // rotateImage.style.transform = `rotate(${dadada}deg)`;
+    }
   }
-  console.log(result);
+  rototo();
+
+  // 증감식 늘어나는거 확인 완
+  // for (let i = 1; i < 12; i += 2) {
+  //   defaultRotation + arc * (orderDefault - i) + randomPlace;
+  //   console.log(i);
+  // }
 
   /** 50% 반반 확률 만들기 */
   // function half() {
@@ -65,11 +101,12 @@ function rotateRoulette() {
   //   }
   // }
 
-  if (Math.random() < 0.5) {
-    rotateImage.style.transform = "rotate(" + Num11 + "deg)";
-  } else {
-    rotateImage.style.transform = "rotate(" + Num1 + "deg)";
-  }
+  // 🍎 랜덤으로 칸 내 마이너스 플러스 랜덤 위치 🍎
+  // if (Math.random() < 0.5) {
+  //   rotateImage.style.transform = "rotate(" + Num11 + "deg)";
+  // } else {
+  //   rotateImage.style.transform = "rotate(" + Num1 + "deg)";
+  // }
 
   // rotateImage.style.transform = "rotate(" + Num11 + "deg)";
 
