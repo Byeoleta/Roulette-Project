@@ -12,6 +12,8 @@ changeBg.onchange = changeBackground;
 
 /** 룰렛 돌려주는 함수 */
 function rotateRoulette() {
+  /** 🔥서버에서 보내줄 당첨 설정값🔥 */
+  winningNum = 2;
   /** 룰렛 칸수(컨텐츠 개수) */
   let rouletteSize = changeBg.selectedIndex + 2;
   /** 360도 룰렛 칸수로 나눔 */
@@ -20,9 +22,6 @@ function rotateRoulette() {
   let defaultRotation = 360 * 9;
   /** 룰렛 칸  가운데 기준 반으로 나눈 뒤  랜덤 위치(+ 하면 왼쪽 랜덤, - 하면 오른쪽 랜덤   ) */
   let randomPlace = Math.floor(Math.random() * (arc / 2));
-
-  /** 🔥서버에서 보내줄 당첨 설정값🔥 */
-  winningNum = 6;
 
   /** 설정값 기준 중심의 왼쪽 위치 중 랜덤 */
   let leftRandom =
