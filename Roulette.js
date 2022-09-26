@@ -57,6 +57,10 @@ function rotateRoulette() {
 /** 룰렛 실행하는 함수 */
 function final() {
   rotateRoulette();
+
+  const rouletteBtn = document.getElementById("roulette-button");
+  rouletteBtn.innerText = "🌝STOP🌝";
+
   let nu = changeBg.selectedIndex + 2;
   setTimeout(() => {
     // 이런 식으로 값 nu에 넣어주기
