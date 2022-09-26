@@ -48,14 +48,14 @@ function clickRoulette() {
 
   /** 동작시 버튼 내 텍스트 변경(start=>stop)되는 함수 */
   const rouletteBtn = document.getElementById("roulette-button");
-  rouletteBtn.innerText = "🌝STOP🌝";
+  rouletteBtn.innerText = "( ✋˙࿁˙ ) STOP!";
 
   let rouletteData = changeBg.selectedIndex + 2;
   let pickData = winningNum;
   setTimeout(() => {
     alert(
       `축하합니다 :)
-${rouletteData}칸 중 ${pickData} 번째 칸에 당첨되었습니다.`
+총 ${rouletteData}칸 중 ${pickData}번째 칸에 당첨되었습니다.`
     ),
       1000;
   }, 1500);
