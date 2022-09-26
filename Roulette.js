@@ -1,5 +1,6 @@
 let changeBg = document.getElementById("changeBg");
 let bgImg = document.getElementById("bgImg");
+
 /** 룰렛 이미지 바뀌는 함수 */
 function changeBackground() {
   let index = changeBg.selectedIndex;
@@ -11,111 +12,38 @@ changeBg.onchange = changeBackground;
 
 /** 룰렛 돌려주는 함수 */
 function rotateRoulette() {
-  let rotateImage = document.getElementById("bgImg");
   /** 룰렛 칸수(컨텐츠 개수) */
   let rouletteSize = changeBg.selectedIndex + 2;
+  /** 360도 룰렛 칸수로 나눔 */
   let arc = 360 / rouletteSize;
-  /** 기본으로 돌아가는 바퀴수 */
+  /** 기본으로 돌아가는 바퀴수(곱하기 뒤 숫자 조절 가능, 최소 9바퀴 세팅) */
   let defaultRotation = 360 * 9;
-  /** 랜덤한 위치에서 멈추는 함수 */
-  // let randomRotate = Math.random() * defaultRotation + defaultRotation;
-
-  let index = changeBg.selectedIndex;
-  let orderDefault = index + 2;
-
-  // 0 ~ 90 사이 난수 만들기 테스트용
-  let ff = Math.floor(Math.random() * 90);
-  // 마이너스 0 ~ 90 사이 난수 만들기
-  let ff2 = Math.floor(Math.random() * -90);
-
   /** 룰렛 칸  가운데 기준 반으로 나눈 뒤  랜덤 위치(+ 하면 왼쪽 랜덤, - 하면 오른쪽 랜덤   ) */
   let randomPlace = Math.floor(Math.random() * (arc / 2));
-
-  /** 1번째 칸 당첨 */
-  // let Num1 = defaultRotation + arc * orderDefault + randomPlace;
-  // let Num11 = defaultRotation + arc * orderDefault - randomPlace;
-  // /** 2번째 칸 당첨 */
-  // let Num2 = defaultRotation + arc * (orderDefault - 1) + randomPlace;
-  // /** 3번째 칸 당첨 */
-  // let Num3 = defaultRotation + arc * (orderDefault - 2) + randomPlace;
-  // /** 4번째 칸 당첨 */
-  // let Num4 = defaultRotation + arc * (orderDefault - 3) + randomPlace;
-  // /** 5번째 칸 당첨 */
-  // let Num5 = defaultRotation + arc * (orderDefault - 4) + randomPlace;
-  // /** 6번째 칸 당첨 */
-  // let Num6 = defaultRotation + arc * (orderDefault - 5) + randomPlace;
 
   /** 서버에서 보내줄 당첨 설정값 */
   winningNum = 6;
 
   /** 설정값 기준 중심의 왼쪽 위치 중 랜덤 */
   let leftRandom =
-    defaultRotation + arc * (orderDefault - (winningNum - 1)) + randomPlace;
+    defaultRotation + arc * (rouletteSize - (winningNum - 1)) + randomPlace;
   /** 설정값 기준 중심의 오른쪽 위치 중 랜덤 */
   let rightRandom =
-    defaultRotation + arc * (orderDefault - (winningNum - 1)) - randomPlace;
+    defaultRotation + arc * (rouletteSize - (winningNum - 1)) - randomPlace;
 
-  // function dada() {
-  //   for (let i = 1; i < 12; i += 2) {
-  //     defaultRotation + arc * (orderDefault - i) + randomPlace;
-  //     console.log(i);
-  //   }
-  // }
-  // dada();
-
-  // function dadada() {
-  //   for (let i = 1; i < 12; i += 2) {
-  //     defaultRotation + arc * (orderDefault - i) - randomPlace;
-  //     console.log(i);
-  //   }
-  // }
-
-  function rototo() {
+  /** 설정값 받은 후, 설정값 칸 내 랜덤위치로 로테이트시키는 함수 */
+  function rotation() {
     if (Math.random() < 0.5) {
-      // rotateImage.style.transform = "rotate(" + Num11 + "deg)";
-      rotateImage.style.transform = "rotate(" + leftRandom + "deg)";
-      // rotateImage.style.transform = `rotate(${dada}deg)`;
-      // rotateImage.style.transform = "rotate(`${dada}`)";
+      bgImg.style.transform = "rotate(" + leftRandom + "deg)";
     } else {
-      // rotateImage.style.transform = "rotate(" + Num1 + "deg)";
-      rotateImage.style.transform = "rotate(" + rightRandom + "deg)";
-      // rotateImage.style.transform = `rotate(${dadada}deg)`;
+      bgImg.style.transform = "rotate(" + rightRandom + "deg)";
     }
   }
-  rototo();
-
-  // 증감식 늘어나는거 확인 완
-  // for (let i = 1; i < 12; i += 2) {
-  //   defaultRotation + arc * (orderDefault - i) + randomPlace;
-  //   console.log(i);
-  // }
-
-  /** 50% 반반 확률 만들기 */
-  // function half() {
-  //   if (Math.random() < 0.5) {
-  //     defaultRotation + arc * (orderDefault - 1) + randomPlace;
-  //     console.log("test");
-  //   } else {
-  //     defaultRotation + arc * (orderDefault - 1) - randomPlace;
-  //     console.log("test!!");
-  //   }
-  // }
-
-  // 🍎 랜덤으로 칸 내 마이너스 플러스 랜덤 위치 🍎
-  // if (Math.random() < 0.5) {
-  //   rotateImage.style.transform = "rotate(" + Num11 + "deg)";
-  // } else {
-  //   rotateImage.style.transform = "rotate(" + Num1 + "deg)";
-  // }
-
-  // rotateImage.style.transform = "rotate(" + Num11 + "deg)";
-
-  // rotateImage.style.transform = `rotate(${half}deg)`;
-  // rotateImage.style.transform = "rotate(`${half}deg`)";
-  rotateImage.style.transition = "transform 1s";
+  rotation();
+  bgImg.style.transition = "transform 1s";
 }
 
-/** 룰렛 실행하는 함수 */
+/** START 버튼 클릭할시 동작하는 함수 */
 function clickRoulette() {
   rotateRoulette();
 
