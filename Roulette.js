@@ -15,13 +15,18 @@ rouletteOptions.onchange = changeBackground;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-/** 🔥🔥🔥서버에서 보내줄 당첨 설정값🔥🔥🔥 */
-let winningNum = 2;
-/** 룰렛 칸수(컨텐츠 개수) */
-let rouletteSize = rouletteOptions.selectedIndex + 2;
+// /** 🔥🔥🔥서버에서 보내줄 당첨 설정값🔥🔥🔥 */
+// let winningNum = 2;
+// /** 룰렛 칸수(컨텐츠 개수) */
+// let rouletteSize = rouletteOptions.selectedIndex + 2;
 
 /** 룰렛 돌려주는 함수 */
 function rotateRoulette() {
+  /** 🔥🔥🔥서버에서 보내줄 당첨 설정값🔥🔥🔥 */
+  winningNum = 1;
+  /** 룰렛 칸수(컨텐츠 개수) */
+  let rouletteSize = rouletteOptions.selectedIndex + 2;
+
   /** 360도 룰렛 칸수로 나눔 */
   let arc = 360 / rouletteSize;
   /** 기본으로 돌아가는 바퀴수(곱하기 뒤 숫자 조절 가능, 최소 9바퀴 세팅) */
@@ -57,10 +62,13 @@ function clickRoulette() {
   const rouletteBtn = document.getElementById("roulette-button");
   rouletteBtn.innerText = "( ✋˙࿁˙ ) STOP!";
 
+  let rouletteData = rouletteOptions.selectedIndex + 2;
+  let selectData = winningNum;
+
   setTimeout(() => {
     alert(
       `축하합니다 :)
-총 ${rouletteSize}칸 중 ${winningNum}번째 칸에 당첨되었습니다.`
+총 ${rouletteData}칸 중 ${selectData}번째 칸에 당첨되었습니다.`
     ),
       1000;
   }, 1500);
