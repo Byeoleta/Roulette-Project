@@ -16,12 +16,12 @@
 .roulette-options h4 {
   padding-right: 10px;
 }
-.roulette-bg {
+.roulette-image {
   width: 300px;
   margin: 0 auto;
   padding-bottom: 5px;
 }
-.roulette-bg img {
+.roulette-image img {
   width: 100%;
 }
 #roulette-button {

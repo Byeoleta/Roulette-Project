@@ -10,9 +10,9 @@
   <body>
     <div class="roulette-container">
       <h1>🍭빙글빙글 룰렛세상🍭</h1>
-      <form class="roulette-options">
+      <form class="roulette-select">
         <h4>룰렛 칸수 선택</h4>
-        <select name="칸 수" id="changeBg">
+        <select name="칸 수" id="roulette-options">
           <option value="/assets/bg_circle2.png">2칸</option>
           <option value="/assets/bg_circle3.png">3칸</option>
           <option value="/assets/bg_circle4.png">4칸</option>
@@ -24,8 +24,12 @@
         <div class="roulette-pointer">
           <img src="/assets/arrow.png" alt="roulette-pointer" />
         </div>
-        <div class="roulette-bg">
-          <img src="/assets/bg_circle2.png" alt="roulette-bg" id="bgImg" />
+        <div class="roulette-image">
+          <img
+            src="/assets/bg_circle2.png"
+            alt="roulette-image"
+            id="roulette-image"
+          />
         </div>
       </div>
       <button id="roulette-button">START 🍭( '-' 🍭 )</button>
