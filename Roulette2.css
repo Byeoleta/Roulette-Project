@@ -1,0 +1,19 @@
+.roulette {
+  width: fit-content;
+  position: relative;
+  margin: 0 auto;
+}
+
+.roulette .arrow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.roulette .roulette-container {
+  padding-top: 50px;
+}
+
+#action .result {
+  font-size: 22px;
+}

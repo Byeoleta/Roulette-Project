@@ -13,8 +13,6 @@ function changeBackground() {
 changeBackground();
 rouletteOptions.onchange = changeBackground;
 
-///////////////////////////////////////////////////////////////////////////////////////////////
-
 /** 룰렛 돌려주는 함수 */
 function rotateRoulette() {
   /** 🔥🔥🔥서버에서 보내줄 당첨 설정값🔥🔥🔥 */
@@ -47,8 +45,6 @@ function rotateRoulette() {
   rotation();
   rouletteImage.style.transition = "transform 1s";
 }
-
-///////////////////////////////////////////////////////////////////////////////////////////////
 
 /** START 버튼 클릭할시 동작하는 함수 */
 function clickRoulette() {
