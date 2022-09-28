@@ -98,7 +98,7 @@ function Roulette(el, config) {
           //   `축하합니다 :D 총 ${rouletteSize}칸 중 ${win}번째 칸에 당첨되었습니다.`
         ),
           1000;
-      });
+      }, 3500);
     });
   };
 
