@@ -82,6 +82,7 @@ function Roulette(el, config) {
       );
   };
 
+  // 룰렛 멈춘뒤 알러트 발생
   this.alertRoulette = function () {
     setTimeout(() => {
       alert(
@@ -92,12 +93,22 @@ function Roulette(el, config) {
     }, 3500);
   };
 
+  // 룰렛 멈춘 뒤 버튼 텍스트 변경
+  this.changeText = function () {
+    if (this.button.html() == "START 🍭( '-' 🍭 )") {
+      this.button.html("( ✋˙࿁˙ ) STOP!");
+    } else {
+      this.button.html("START 🍭( '-' 🍭 )");
+    }
+  };
+
   // 버튼 클릭할 때 실행
   this.setButton = function () {
     var thisIs = this;
     this.button.click(function () {
       thisIs.rotateRoulette(thisIs.getRouletteRotate() - thisIs.startDeg);
-      thisIs.button.innerText = "( ✋˙࿁˙ ) STOP!";
+      //   thisIs.button.innerText = "( ✋˙࿁˙ ) STOP!";
+      thisIs.changeText();
       thisIs.alertRoulette();
     });
   };
