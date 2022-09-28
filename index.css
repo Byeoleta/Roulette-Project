@@ -7,13 +7,14 @@
   margin: 0 auto;
 }
 .roulette h1 {
-  margin: 50px auto;
+  margin: 20px auto;
   color: #809ce3;
 }
 .roulette-pointer {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  top: 7%;
   z-index: 1;
 }
 .roulette-pointer.right {
@@ -27,7 +28,8 @@
 }
 .roulette-pointer.bottom {
   position: absolute;
-  bottom: 95px;
+  /* bottom: 95px; */
+  top: 80%;
   left: 50%;
   transform-origin: center;
   transform: translateX(-50%) rotate(180deg);
