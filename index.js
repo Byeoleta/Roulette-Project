@@ -57,31 +57,53 @@ function Roulette(el, config) {
     this.roulettePointer.addClass(this.start);
   };
 
+  this.getRouletteRotate = function () {
+    /** 360도를 룰렛 칸수로 나눔 */
+    var arc = 360 / this.config.rouletteSize;
+
+    return arc * this.config.win + this.randomRotate(arc);
+  };
+
+  this.randomRotate = function (arc) {
+    /** 룰렛 칸  가운데 기준 반으로 나눈 뒤  랜덤 위치(+ 하면 왼쪽 랜덤, - 하면 오른쪽 랜덤) */
+    var randomPlace = Math.floor(Math.random() * (arc / 2));
+    var fiftyPercent = Math.random() < 0.5;
+
+    return fiftyPercent ? randomPlace : -randomPlace;
+  };
+
+  this.rotateRoulette = function (rotate) {
+    this.rouletteImage
+      .stop()
+      .animate(
+        { rotate: this.defaultRotation - rotate + "deg" },
+        this.rotateDuration,
+        "swing"
+      );
+  };
+
   // 버튼 클릭할 때 실행
   this.setButton = function () {
+    var thisIs = this;
     this.button.click(function () {
+      //   changeText();
+      thisIs.rotateRoulette(thisIs.getRouletteRotate() - thisIs.startDeg);
       const rouletteBtn = document.getElementById("roulette-button");
       rouletteBtn.innerText = "( ✋˙࿁˙ ) STOP!";
+
+      //   var rouletteSize = this.config.rouletteSize;
+      setTimeout(() => {
+        alert(
+          "추카"
+          //   `축하합니다 :D 총 ${rouletteSize}칸 중 ${win}번째 칸에 당첨되었습니다.`
+        ),
+          1000;
+      });
     });
   };
 
   this.init();
 }
-
-// /** 룰렛 칸수 선택할 수 있는 옵션 항목 */
-// let rouletteOptions = document.getElementById("roulette-options");
-// /** 옵션 선택시 바뀌는 룰렛 이미지 영역 */
-// let rouletteImage = document.getElementById("roulette-image");
-
-// /** 룰렛 이미지 바뀌는 함수 */
-// function changeBackground() {
-//   /** 옵션에서 선택한 항목 인덱스 */
-//   let index = rouletteOptions.selectedIndex;
-//   rouletteImage.src = rouletteOptions.options[index].value;
-// }
-
-// changeBackground();
-// rouletteOptions.onchange = changeBackground;
 
 // /** 룰렛 돌려주는 함수 */
 // function rotateRoulette() {
@@ -139,3 +161,18 @@ function Roulette(el, config) {
 // }
 
 // document.getElementById("roulette-button").onclick = clickRoulette;
+
+// /** 룰렛 칸수 선택할 수 있는 옵션 항목 */
+// let rouletteOptions = document.getElementById("roulette-options");
+// /** 옵션 선택시 바뀌는 룰렛 이미지 영역 */
+// let rouletteImage = document.getElementById("roulette-image");
+
+// /** 룰렛 이미지 바뀌는 함수 */
+// function changeBackground() {
+//   /** 옵션에서 선택한 항목 인덱스 */
+//   let index = rouletteOptions.selectedIndex;
+//   rouletteImage.src = rouletteOptions.options[index].value;
+// }
+
+// changeBackground();
+// rouletteOptions.onchange = changeBackground;
