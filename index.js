@@ -40,13 +40,13 @@ function Roulette(el, config) {
         startPoint = 0;
         break;
       case "right":
-        startPoint: 1;
+        startPoint = 1;
         break;
       case "bottom":
-        startPoint = 0;
+        startPoint = 2;
         break;
       case "left":
-        startPoint: 1;
+        startPoint = 3;
         break;
     }
 
