@@ -35,6 +35,19 @@
       <button id="roulette-button">START 🍭( '-' 🍭 )</button>
     </div>
 
+    <script src="/jquery.js"></script>
     <script src="/Roulette.js"></script>
+
+    <script>
+      /* new 연산자 사용해서 재사용 가능한 객체 생성 코드 구현 */
+      var roulette = new Roulette(".roulette-container", {
+        winningNum: 2,
+        rouletteSize: 3,
+        start: "right",
+        rotate: 10,
+        duration: 3000,
+        button: { el: "#roulette-button" },
+      });
+    </script>
   </body>
 </html>
