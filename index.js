@@ -82,23 +82,23 @@ function Roulette(el, config) {
       );
   };
 
+  this.alertRoulette = function () {
+    setTimeout(() => {
+      alert(
+        "추카"
+        //   `축하합니다 :D 총 ${rouletteSize}칸 중 ${win}번째 칸에 당첨되었습니다.`
+      ),
+        1000;
+    }, 3500);
+  };
+
   // 버튼 클릭할 때 실행
   this.setButton = function () {
     var thisIs = this;
     this.button.click(function () {
-      //   changeText();
       thisIs.rotateRoulette(thisIs.getRouletteRotate() - thisIs.startDeg);
-      const rouletteBtn = document.getElementById("roulette-button");
-      rouletteBtn.innerText = "( ✋˙࿁˙ ) STOP!";
-
-      //   var rouletteSize = this.config.rouletteSize;
-      setTimeout(() => {
-        alert(
-          "추카"
-          //   `축하합니다 :D 총 ${rouletteSize}칸 중 ${win}번째 칸에 당첨되었습니다.`
-        ),
-          1000;
-      }, 3500);
+      thisIs.button.innerText = "( ✋˙࿁˙ ) STOP!";
+      thisIs.alertRoulette();
     });
   };
 
