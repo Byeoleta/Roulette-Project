@@ -95,11 +95,9 @@ function Roulette(el, config) {
 
   // 룰렛 멈춘 뒤 버튼 텍스트 변경
   this.changeText = function () {
-    if (this.button.html() == "START 🍭( '-' 🍭 )") {
-      this.button.html("( ✋˙࿁˙ ) STOP!");
-    } else {
-      this.button.html("START 🍭( '-' 🍭 )");
-    }
+    this.button.html() == "START 🍭( '-' 🍭 )"
+      ? this.button.html("( ✋˙࿁˙ ) STOP!")
+      : this.button.html("START 🍭( '-' 🍭 )");
   };
 
   // 버튼 클릭할 때 실행
