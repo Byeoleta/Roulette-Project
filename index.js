@@ -1,3 +1,12 @@
+function Roulette(el, config) {
+  this.el = el;
+  this.config = config;
+  this.config.winningNum = winningNum;
+  this.start = this.config.start || "top";
+  this.defaultRotation = this.config.rotate * 360 || 19 * 360;
+  this.rotateDuration = this.config.duration || "3000";
+}
+
 /** 룰렛 칸수 선택할 수 있는 옵션 항목 */
 let rouletteOptions = document.getElementById("roulette-options");
 /** 옵션 선택시 바뀌는 룰렛 이미지 영역 */
