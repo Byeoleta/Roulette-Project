@@ -6,6 +6,7 @@ function Roulette(el, config) {
   this.defaultRotation = this.config.rotate * 360 || 9 * 360;
   this.rotateDuration = this.config.duration || "3000";
 
+  // element 초기값 설정
   this.roulette = $(this.el);
   this.button = this.config.button
     ? $(this.config.button.el)
@@ -14,6 +15,14 @@ function Roulette(el, config) {
   this.rouletteBox = this.roulette.children(".roulette-image");
   this.rouletteImage = this.rouletteBox.children("#roulette-image");
   this.startDeg = 0;
+
+  // 룰렛 이미지 변경
+  this.setRoulette = function () {
+    this.rouletteImage.attr(
+      "src",
+      "./assets/bg_circle" + this.config.rouletteSize + ".png"
+    );
+  };
 }
 
 /** 룰렛 칸수 선택할 수 있는 옵션 항목 */
