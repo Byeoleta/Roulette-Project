@@ -27,7 +27,7 @@ function Roulette(el, config) {
   this.setRoulette = function () {
     this.rouletteCircle.attr(
       "src",
-      "./static/bg_circle" + this.config.space + ".png"
+      "./assets/bg_circle" + this.config.space + ".png"
     );
   };
 
