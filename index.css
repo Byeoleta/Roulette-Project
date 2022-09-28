@@ -1,20 +1,13 @@
-.roulette-container {
+* {
   text-align: center;
 }
-.roulette-container h1 {
+.roulette h1 {
   margin: 5px auto;
   color: #809ce3;
 }
 .roulette-box {
   padding-top: 10px;
-}
-.roulette-options {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.roulette-options h4 {
-  padding-right: 10px;
+  margin: 0 auto;
 }
 .roulette-image {
   width: 300px;
