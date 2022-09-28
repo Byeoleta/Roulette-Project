@@ -20,6 +20,7 @@ function Roulette(el, config) {
   this.init = function () {
     this.setRoulette();
     this.setStartPoint();
+    this.setButton();
   };
 
   // 룰렛 이미지 변경
@@ -54,6 +55,14 @@ function Roulette(el, config) {
 
     this.rouletteImage.css("rotate", angle * startPoint + "deg");
     this.roulettePointer.addClass(this.start);
+  };
+
+  // 버튼 클릭할 때 실행
+  this.setButton = function () {
+    this.button.click(function () {
+      const rouletteBtn = document.getElementById("roulette-button");
+      rouletteBtn.innerText = "( ✋˙࿁˙ ) STOP!";
+    });
   };
 
   this.init();
