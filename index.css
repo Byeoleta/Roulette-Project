@@ -1,22 +1,51 @@
 * {
   text-align: center;
 }
+.roulette {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
 .roulette h1 {
   margin: 5px auto;
   color: #809ce3;
 }
-.roulette-box {
-  padding-top: 10px;
-  margin: 0 auto;
+.roulette-pointer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.roulette-pointer.right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: auto;
+  margin-top: -40px;
+  transform: rotate(90deg);
+  z-index: 1;
+}
+.roulette-pointer.bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform-origin: center;
+  transform: translateX(-50%) rotate(180deg);
+  z-index: 1;
+}
+.roulette-pointer.left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  left: auto;
+  margin-top: -40px;
+  transform: rotate(-90deg);
+  z-index: 1;
 }
 .roulette-image {
-  width: 300px;
-  margin: 0 auto;
-  padding-bottom: 5px;
+  padding: 50px;
 }
-.roulette-image img {
-  width: 100%;
-}
+
 #roulette-button {
   margin: 20px;
   position: relative;

@@ -10,21 +10,17 @@
   <body>
     <div class="roulette">
       <h1>🍭빙글빙글 룰렛세상🍭</h1>
-      <div class="roulette-box">
-        <div class="roulette-pointer">
-          <img
-            src="/assets/arrow.png"
-            alt="roulette-pointer"
-            id="roulette-pointer"
-          />
-        </div>
-        <div class="roulette-image">
-          <img
-            src="/assets/bg_circle2.png"
-            alt="roulette-image"
-            id="roulette-image"
-          />
-        </div>
+      <img
+        src="/assets/arrow.png"
+        alt="roulette-pointer"
+        class="roulette-pointer"
+      />
+      <div class="roulette-image">
+        <img
+          src="/assets/bg_circle2.png"
+          alt="roulette-image"
+          id="roulette-image"
+        />
       </div>
       <button id="roulette-button">START 🍭( '-' 🍭 )</button>
     </div>
@@ -36,11 +32,13 @@
       /* new 연산자 사용해서 재사용 가능한 객체 생성 코드 구현 */
       var roulette = new Roulette(".roulette", {
         win: 2,
-        rouletteSize: 5,
+        rouletteSize: 3,
         start: "right",
         rotate: 9,
         duration: 3000,
-        button: { el: "#roulette-button" },
+        button: {
+          el: "#roulette-button",
+        },
       });
     </script>
   </body>

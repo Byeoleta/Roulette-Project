@@ -1,7 +1,7 @@
 function Roulette(el, config) {
   this.el = el;
   this.config = config;
-  this.config.win = config.win_1;
+  this.config.win = config.win - 1;
   this.start = this.config.start || "top";
   this.defaultRotation = this.config.rotate * 360 || 9 * 360;
   this.rotateDuration = this.config.duration || "3000";
@@ -11,7 +11,7 @@ function Roulette(el, config) {
   this.button = this.config.button
     ? $(this.config.button.el)
     : this.roulette.children("#roulette-button");
-  this.roulettePointer = this.roulette.children("#roulette-pointer");
+  this.roulettePointer = this.roulette.children(".roulette-pointer");
   this.rouletteBox = this.roulette.children(".roulette-image");
   this.rouletteImage = this.rouletteBox.children("#roulette-image");
   this.startDeg = 0;
@@ -19,6 +19,7 @@ function Roulette(el, config) {
   // 룰렛 세팅
   this.init = function () {
     this.setRoulette();
+    this.setStartPoint();
   };
 
   // 룰렛 이미지 변경
@@ -28,6 +29,7 @@ function Roulette(el, config) {
       "./assets/bg_circle" + this.config.rouletteSize + ".png"
     );
   };
+  console.log(this.config.rouletteSize);
 
   // 화살표 지점 세팅 start 지점
   this.setStartPoint = function () {
