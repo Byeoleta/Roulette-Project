@@ -3,8 +3,17 @@ function Roulette(el, config) {
   this.config = config;
   this.config.winningNum = winningNum;
   this.start = this.config.start || "top";
-  this.defaultRotation = this.config.rotate * 360 || 19 * 360;
+  this.defaultRotation = this.config.rotate * 360 || 9 * 360;
   this.rotateDuration = this.config.duration || "3000";
+
+  this.roulette = $(this.el);
+  this.button = this.config.button
+    ? $(this.config.button.el)
+    : this.roulette.children("#roulette-button");
+  this.roulettePointer = this.roulette.children("#roulette-pointer");
+  this.rouletteBox = this.roulette.children(".roulette-image");
+  this.rouletteImage = this.rouletteBox.children("#roulette-image");
+  this.startDeg = 0;
 }
 
 /** 룰렛 칸수 선택할 수 있는 옵션 항목 */
