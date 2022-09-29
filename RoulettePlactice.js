@@ -135,3 +135,5 @@ function clickRoulette() {
 }
 
 document.getElementById("roulette-button").onclick = clickRoulette;
+
+// 삭제 전
