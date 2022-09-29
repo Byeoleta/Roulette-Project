@@ -1,0 +1,49 @@
+.roulette {
+  width: fit-content;
+  position: relative;
+  margin: 0 auto;
+}
+
+.roulette .arrow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.roulette .arrow.right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: auto;
+  margin-top: -40px;
+  transform: rotate(90deg);
+  z-index: 10;
+}
+
+.roulette .arrow.bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform-origin: center;
+  transform: translateX(-50%) rotate(180deg);
+  z-index: 10;
+}
+
+.roulette .arrow.left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  left: auto;
+  margin-top: -40px;
+  transform: rotate(-90deg);
+  z-index: 10;
+}
+
+.roulette .roulette-container {
+  padding: 50px;
+}
+
+#action .result {
+  font-size: 22px;
+}
